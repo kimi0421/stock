@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+import urlparse
+urlparse.uses_netloc.append('mysql')
+MYSQL_URL = urlparse.urlparse(os.environ['DATABASE_URL'])
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -59,8 +62,12 @@ WSGI_APPLICATION = 'stock.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': MYSQL_URL.path[1:],
+        'USER': MYSQL_URL.username,
+        'PASSWORD': MYSQL_URL.password,
+        'HOST': MYSQL_URL.hostname,
+        'PORT': MYSQL_URL.port,
     }
 }
 
