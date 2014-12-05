@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://127.0.0.1:8000/stock/# -->
+<html style="min-height: 1508px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <title>Stock | Dashboard</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link href="./Stock   Dashboard_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="./Stock   Dashboard_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- Ionicons -->
+        <link href="./Stock   Dashboard_files/ionicons.min.css" rel="stylesheet" type="text/css">
+        <!-- Morris chart -->
+        <link href="./Stock   Dashboard_files/morris.css" rel="stylesheet" type="text/css">
+        <!-- jvectormap -->
+        <link href="./Stock   Dashboard_files/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+        <!-- Date Picker -->
+        <link href="./Stock   Dashboard_files/datepicker3.css" rel="stylesheet" type="text/css">
+        <!-- Daterange picker -->
+        <link href="./Stock   Dashboard_files/daterangepicker-bs3.css" rel="stylesheet" type="text/css">
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link href="./Stock   Dashboard_files/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css">
+        <!-- Theme style -->
+        <link href="./Stock   Dashboard_files/AdminLTE.css" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+    <body class="skin-blue  pace-done" style="min-height: 1508px;"><div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+        <!-- header logo: style can be found in header.less -->
+        <header class="header">
+            <a href="http://127.0.0.1:8000/stock/index.html" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                Recommended Stock
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="http://127.0.0.1:8000/stock/#content-header" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="dropdown messages-menu">
+                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope"></i>
+                                <span class="label label-success">4</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 4 messages</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                                        <li><!-- start message -->
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <div class="pull-left">
+                                                    <img src="./Stock   Dashboard_files/avatar3.png" class="img-circle" alt="User Image">
+                                                </div>
+                                                <h4>
+                                                    Support Team
+                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li><!-- end message -->
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <div class="pull-left">
+                                                    <img src="./Stock   Dashboard_files/avatar2.png" class="img-circle" alt="user image">
+                                                </div>
+                                                <h4>
+                                                    AdminLTE Design Team
+                                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <div class="pull-left">
+                                                    <img src="./Stock   Dashboard_files/avatar.png" class="img-circle" alt="user image">
+                                                </div>
+                                                <h4>
+                                                    Developers
+                                                    <small><i class="fa fa-clock-o"></i> Today</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <div class="pull-left">
+                                                    <img src="./Stock   Dashboard_files/avatar2.png" class="img-circle" alt="user image">
+                                                </div>
+                                                <h4>
+                                                    Sales Department
+                                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <div class="pull-left">
+                                                    <img src="./Stock   Dashboard_files/avatar.png" class="img-circle" alt="user image">
+                                                </div>
+                                                <h4>
+                                                    Reviewers
+                                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                                </h4>
+                                                <p>Why not buy a new awesome theme?</p>
+                                            </a>
+                                        </li>
+                                    </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 0px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+                                </li>
+                                <li class="footer"><a href="./Stock   Dashboard_files/Stock   Dashboard.html">See All Messages</a></li>
+                            </ul>
+                        </li>
+                        <!-- Notifications: style can be found in dropdown.less -->
+                        <li class="dropdown notifications-menu">
+                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-warning"></i>
+                                <span class="label label-warning">10</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 10 notifications</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <i class="ion ion-ios7-people info"></i> 5 new members joined today
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <i class="fa fa-users warning"></i> 5 new members joined
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <i class="ion ion-ios7-cart success"></i> 25 sales made
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <i class="ion ion-ios7-person danger"></i> You changed your username
+                                            </a>
+                                        </li>
+                                    </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 0px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+                                </li>
+                                <li class="footer"><a href="./Stock   Dashboard_files/Stock   Dashboard.html">View all</a></li>
+                            </ul>
+                        </li>
+                        <!-- Tasks: style can be found in dropdown.less -->
+                        <li class="dropdown tasks-menu">
+                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-tasks"></i>
+                                <span class="label label-danger">9</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 9 tasks</li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                                        <li><!-- Task item -->
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <h3>
+                                                    Design some buttons
+                                                    <small class="pull-right">20%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">20% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <h3>
+                                                    Create a nice theme
+                                                    <small class="pull-right">40%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">40% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <h3>
+                                                    Some task I need to do
+                                                    <small class="pull-right">60%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">60% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                        <li><!-- Task item -->
+                                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html">
+                                                <h3>
+                                                    Make beautiful transitions
+                                                    <small class="pull-right">80%</small>
+                                                </h3>
+                                                <div class="progress xs">
+                                                    <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                        <span class="sr-only">80% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li><!-- end task item -->
+                                    </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 0px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 0px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+                                </li>
+                                <li class="footer">
+                                    <a href="./Stock   Dashboard_files/Stock   Dashboard.html">View all tasks</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i>
+                                <span>Kimi Jin <i class="caret"></i></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header bg-light-blue">
+                                    <img src="./Stock   Dashboard_files/avatar3.png" class="img-circle" alt="User Image">
+                                    <p>
+                                        Kimi Jin
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="wrapper row-offcanvas row-offcanvas-left" style="min-height: 868px;">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="left-side sidebar-offcanvas" style="min-height: 1508px;">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="./Stock   Dashboard_files/avatar3.png" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info">
+                            <p>Hello, Guest</p>
+
+                            <a href="./Stock   Dashboard_files/Stock   Dashboard.html"><i class="fa fa-circle text-success"></i> Online</a>
+                        </div>
+                    </div>
+                    <!-- search form -->
+                    <form action="./Stock   Dashboard_files/Stock   Dashboard.html" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="treeview">
+                            <a href="http://127.0.0.1:8000/stock/index.html">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <span>Stocks</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/morris.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Overall</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/morris.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Capital Goods</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/flot.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Finance</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/inline.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Basic Industries</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/morris.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Technology</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/flot.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Energy</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/inline.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Health Care</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/inline.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Consumer Services</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/inline.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Consumer Non-Durables</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/inline.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Consumer Durables</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/inline.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Miscellaneous</a></li>
+                                <li><a href="http://127.0.0.1:8000/stock/pages/charts/inline.html" style="margin-left: 10px;"><i class="fa fa-angle-double-right"></i>Transportation</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header" id="content-header">
+                    <h1>
+                        Recommended
+                        <small>Overall</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="./Stock   Dashboard_files/Stock   Dashboard.html"><i class="fa fa-line-chart"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Small boxes (Stat box) -->
+                    <!--<div class="row">-->
+                        <!--<div class="col-lg-2 col-xs-3">-->
+                            <!--&lt;!&ndash; small box &ndash;&gt;-->
+                            <!--<div class="small-box bg-aqua">-->
+                                <!--<div class="inner">-->
+                                    <!--<h3>-->
+                                        <!--150-->
+                                    <!--</h3>-->
+                                    <!--<p>-->
+                                        <!--New Orders-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="icon">-->
+                                    <!--<i class="ion ion-bag"></i>-->
+                                <!--</div>-->
+                                <!--<a href="#" class="small-box-footer">-->
+                                    <!--More info <i class="fa fa-arrow-circle-right"></i>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                        <!--<div class="col-lg-2 col-xs-3">-->
+                            <!--&lt;!&ndash; small box &ndash;&gt;-->
+                            <!--<div class="small-box bg-green">-->
+                                <!--<div class="inner">-->
+                                    <!--<h3>-->
+                                        <!--53<sup style="font-size: 20px">%</sup>-->
+                                    <!--</h3>-->
+                                    <!--<p>-->
+                                        <!--Bounce Rate-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="icon">-->
+                                    <!--<i class="ion ion-stats-bars"></i>-->
+                                <!--</div>-->
+                                <!--<a href="#" class="small-box-footer">-->
+                                    <!--More info <i class="fa fa-arrow-circle-right"></i>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                        <!--<div class="col-lg-2 col-xs-3">-->
+                            <!--&lt;!&ndash; small box &ndash;&gt;-->
+                            <!--<div class="small-box bg-yellow">-->
+                                <!--<div class="inner">-->
+                                    <!--<h3>-->
+                                        <!--44-->
+                                    <!--</h3>-->
+                                    <!--<p>-->
+                                        <!--User Registrations-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="icon">-->
+                                    <!--<i class="ion ion-person-add"></i>-->
+                                <!--</div>-->
+                                <!--<a href="#" class="small-box-footer">-->
+                                    <!--More info <i class="fa fa-arrow-circle-right"></i>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                        <!--<div class="col-lg-2 col-xs-3">-->
+                            <!--&lt;!&ndash; small box &ndash;&gt;-->
+                            <!--<div class="small-box bg-red">-->
+                                <!--<div class="inner">-->
+                                    <!--<h3>-->
+                                        <!--65-->
+                                    <!--</h3>-->
+                                    <!--<p>-->
+                                        <!--Unique Visitors-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="icon">-->
+                                    <!--<i class="ion ion-pie-graph"></i>-->
+                                <!--</div>-->
+                                <!--<a href="#" class="small-box-footer">-->
+                                    <!--More info <i class="fa fa-arrow-circle-right"></i>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                        <!--<div class="col-lg-2 col-xs-3">-->
+                            <!--&lt;!&ndash; small box &ndash;&gt;-->
+                            <!--<div class="small-box bg-red">-->
+                                <!--<div class="inner">-->
+                                    <!--<h3>-->
+                                        <!--65-->
+                                    <!--</h3>-->
+                                    <!--<p>-->
+                                        <!--Unique Visitors-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="icon">-->
+                                    <!--<i class="ion ion-pie-graph"></i>-->
+                                <!--</div>-->
+                                <!--<a href="#" class="small-box-footer">-->
+                                    <!--More info <i class="fa fa-arrow-circle-right"></i>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                        <!--<div class="col-lg-2 col-xs-3">-->
+                            <!--&lt;!&ndash; small box &ndash;&gt;-->
+                            <!--<div class="small-box bg-red">-->
+                                <!--<div class="inner">-->
+                                    <!--<h3>-->
+                                        <!--65-->
+                                    <!--</h3>-->
+                                    <!--<p>-->
+                                        <!--Unique Visitors-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="icon">-->
+                                    <!--<i class="ion ion-pie-graph"></i>-->
+                                <!--</div>-->
+                                <!--<a href="#" class="small-box-footer">-->
+                                    <!--More info <i class="fa fa-arrow-circle-right"></i>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                    <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
+
+                    <div class="row">
+                        
+                        <div class="col-lg-2 col-xs-3">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        -1.56<sup style="font-size: 20px">%</sup>
+                                    </h3>
+                                    <p>
+                                        SONC
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        
+                        <div class="col-lg-2 col-xs-3">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        -0.16<sup style="font-size: 20px">%</sup>
+                                    </h3>
+                                    <p>
+                                        SYK
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        
+                        <div class="col-lg-2 col-xs-3">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        +0.64<sup style="font-size: 20px">%</sup>
+                                    </h3>
+                                    <p>
+                                        BERY
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        
+                        <div class="col-lg-2 col-xs-3">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        +1.95<sup style="font-size: 20px">%</sup>
+                                    </h3>
+                                    <p>
+                                        CUB
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        
+                        <div class="col-lg-2 col-xs-3">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        -2.06<sup style="font-size: 20px">%</sup>
+                                    </h3>
+                                    <p>
+                                        TASR
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        
+                        <div class="col-lg-2 col-xs-3">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        -0.46<sup style="font-size: 20px">%</sup>
+                                    </h3>
+                                    <p>
+                                        CAG
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="./Stock   Dashboard_files/Stock   Dashboard.html" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        
+                    </div>
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                        <section class="col-lg-12 connectedSortable ui-sortable">
+
+                            <!-- Custom tabs (Charts with tabs)-->
+                            <div class="nav-tabs-custom" style="cursor: move;">
+                                <!-- Tabs within a box -->
+                                <ul class="nav nav-tabs pull-right ui-sortable-handle">
+                                    <li class="active"><a href="http://127.0.0.1:8000/stock/#content-header" data-toggle="tab">Area</a></li>
+                                    <li><a href="http://127.0.0.1:8000/stock/#content-header" data-toggle="tab">Donut</a></li>
+                                    <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <!-- Morris chart - Sales -->
+                                    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"><svg height="300" version="1.1" width="1670" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="49.21875" y="260.984375" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><path fill="none" stroke="#aaaaaa" d="M61.71875,260.984375H1645" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="49.21875" y="201.98828125" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.16015625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">7,500</tspan></text><path fill="none" stroke="#aaaaaa" d="M61.71875,201.98828125H1645" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="49.21875" y="142.9921875" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.15625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">15,000</tspan></text><path fill="none" stroke="#aaaaaa" d="M61.71875,142.9921875H1645" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="49.21875" y="83.99609375000003" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.160156250000028" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">22,500</tspan></text><path fill="none" stroke="#aaaaaa" d="M61.71875,83.99609375000003H1645" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="49.21875" y="25.00000000000003" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal"><tspan dy="4.164062500000028" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">30,000</tspan></text><path fill="none" stroke="#aaaaaa" d="M61.71875,25.00000000000003H1645" stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="1645" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-06</tspan></text><text x="1527.6427142929472" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-04</tspan></text><text x="1414.213370525543" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-02</tspan></text><text x="1294.9321948888664" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-12</tspan></text><text x="1177.4947471014127" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-10</tspan></text><text x="1060.13746139436" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-08</tspan></text><text x="942.7801756873071" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-06</tspan></text><text x="825.4228899802542" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-04</tspan></text><text x="710.0696562832262" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-02</tspan></text><text x="590.7884806465496" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-12</tspan></text><text x="473.35103285909577" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-10</tspan></text><text x="355.99374715204294" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-08</tspan></text><text x="238.63646144499015" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-06</tspan></text><text x="121.27917573793732" y="273.484375" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: sans-serif;" font-size="12px" font-family="sans-serif" font-weight="normal" transform="matrix(1,0,0,1,0,7.0078)"><tspan dy="4.1640625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-04</tspan></text><path fill="#74a5c1" stroke="none" d="M61.71875,219.04208541666668C105.94817786124753,219.55338489583335,194.40703358374262,222.61002084126676,238.63646144499015,221.08728333333335C282.88592982633793,219.56385586730843,371.3848665890335,209.12287552083336,415.63433497038125,206.85742552083335C459.42287138942334,204.61557395833336,546.9999442275075,204.87065520729024,590.7884806465496,203.05807708333333C634.5569765454914,201.2463285145819,722.0939683433751,194.90224712835916,765.8624642423168,192.36011875000003C810.0918921035644,189.79121887315083,898.5507478260595,182.5068121009992,942.7801756873071,182.6139640625C987.0296440686548,182.72116457495753,1075.5285808313504,204.16621522960295,1119.778049212698,193.21752864583334C1163.56658563174,182.38289088064462,1251.1436584698245,101.94032933148736,1294.9321948888664,95.48066666666668C1338.2197183054022,89.09491318565402,1424.794765138474,135.12919569033377,1468.0822885550099,141.8358640625C1512.3117164162575,148.6884645705421,1600.7705721387524,147.74727265625,1645,149.7177421875L1645,260.984375L61.71875,260.984375Z" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></path><path fill="none" stroke="#3c8dbc" d="M61.71875,219.04208541666668C105.94817786124753,219.55338489583335,194.40703358374262,222.61002084126676,238.63646144499015,221.08728333333335C282.88592982633793,219.56385586730843,371.3848665890335,209.12287552083336,415.63433497038125,206.85742552083335C459.42287138942334,204.61557395833336,546.9999442275075,204.87065520729024,590.7884806465496,203.05807708333333C634.5569765454914,201.2463285145819,722.0939683433751,194.90224712835916,765.8624642423168,192.36011875000003C810.0918921035644,189.79121887315083,898.5507478260595,182.5068121009992,942.7801756873071,182.6139640625C987.0296440686548,182.72116457495753,1075.5285808313504,204.16621522960295,1119.778049212698,193.21752864583334C1163.56658563174,182.38289088064462,1251.1436584698245,101.94032933148736,1294.9321948888664,95.48066666666668C1338.2197183054022,89.09491318565402,1424.794765138474,135.12919569033377,1468.0822885550099,141.8358640625C1512.3117164162575,148.6884645705421,1600.7705721387524,147.74727265625,1645,149.7177421875" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="61.71875" cy="219.04208541666668" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="238.63646144499015" cy="221.08728333333335" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="415.63433497038125" cy="206.85742552083335" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="590.7884806465496" cy="203.05807708333333" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="765.8624642423168" cy="192.36011875000003" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="942.7801756873071" cy="182.6139640625" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1119.778049212698" cy="193.21752864583334" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1294.9321948888664" cy="95.48066666666668" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1468.0822885550099" cy="141.8358640625" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1645" cy="149.7177421875" r="4" fill="#3c8dbc" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><path fill="#eaf2f5" stroke="none" d="M61.71875,240.01323020833334C105.94817786124753,239.792978125,194.40703358374262,241.34014210922754,238.63646144499015,239.132221875C282.88592982633793,236.92330122381088,371.3848665890335,223.32341031849913,415.63433497038125,222.34586666666667C459.42287138942334,221.37850576120746,546.9999442275075,233.21927390045636,590.7884806465496,231.35260364583334C634.5569765454914,229.4867877025397,722.0939683433751,209.27728020667274,765.8624642423168,207.415921875C810.0918921035644,205.5349613264644,898.5507478260595,214.4270675434716,942.7801756873071,216.383328125C987.0296440686548,218.34047509555492,1075.5285808313504,232.36362989746948,1119.778049212698,223.06955208333335C1163.56658563174,213.87228757976115,1251.1436584698245,148.21998592925897,1294.9321948888664,142.41795885416667C1338.2197183054022,136.6823165282173,1424.794765138474,170.45926829213897,1468.0822885550099,176.91887447916667C1512.3117164162575,183.51903691193064,1600.7705721387524,190.2224936197917,1645,194.65703333333335L1645,260.984375L61.71875,260.984375Z" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></path><path fill="none" stroke="#a0d0e0" d="M61.71875,240.01323020833334C105.94817786124753,239.792978125,194.40703358374262,241.34014210922754,238.63646144499015,239.132221875C282.88592982633793,236.92330122381088,371.3848665890335,223.32341031849913,415.63433497038125,222.34586666666667C459.42287138942334,221.37850576120746,546.9999442275075,233.21927390045636,590.7884806465496,231.35260364583334C634.5569765454914,229.4867877025397,722.0939683433751,209.27728020667274,765.8624642423168,207.415921875C810.0918921035644,205.5349613264644,898.5507478260595,214.4270675434716,942.7801756873071,216.383328125C987.0296440686548,218.34047509555492,1075.5285808313504,232.36362989746948,1119.778049212698,223.06955208333335C1163.56658563174,213.87228757976115,1251.1436584698245,148.21998592925897,1294.9321948888664,142.41795885416667C1338.2197183054022,136.6823165282173,1424.794765138474,170.45926829213897,1468.0822885550099,176.91887447916667C1512.3117164162575,183.51903691193064,1600.7705721387524,190.2224936197917,1645,194.65703333333335" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="61.71875" cy="240.01323020833334" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="238.63646144499015" cy="239.132221875" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="415.63433497038125" cy="222.34586666666667" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="590.7884806465496" cy="231.35260364583334" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="765.8624642423168" cy="207.415921875" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="942.7801756873071" cy="216.383328125" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1119.778049212698" cy="223.06955208333335" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1294.9321948888664" cy="142.41795885416667" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1468.0822885550099" cy="176.91887447916667" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1645" cy="194.65703333333335" r="4" fill="#a0d0e0" stroke="#ffffff" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg><div class="morris-hover morris-default-style" style="display: none;"></div></div>
+                                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"><svg height="300" version="1.1" width="512" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><path fill="none" stroke="#3c8dbc" d="M256,243.33333333333331A93.33333333333333,93.33333333333333,0,0,0,344.2277551949771,180.44625304313007" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#3c8dbc" stroke="#ffffff" d="M256,246.33333333333331A96.33333333333333,96.33333333333333,0,0,0,347.06364732624417,181.4248826052307L383.6151459070204,194.03833029452744A135,135,0,0,1,256,285Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#f56954" d="M344.2277551949771,180.44625304313007A93.33333333333333,93.33333333333333,0,0,0,172.28484627831412,108.73398312817662" stroke-width="2" opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></path><path fill="#f56954" stroke="#ffffff" d="M347.06364732624417,181.4248826052307A96.33333333333333,96.33333333333333,0,0,0,169.59400205154566,107.40757544301087L130.42726941747117,88.10097469226493A140,140,0,0,1,388.3416327924656,195.6693795646951Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><path fill="none" stroke="#00a65a" d="M172.28484627831412,108.73398312817662A93.33333333333333,93.33333333333333,0,0,0,255.97067846904883,243.333328727518" stroke-width="2" opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path><path fill="#00a65a" stroke="#ffffff" d="M169.59400205154566,107.40757544301087A96.33333333333333,96.33333333333333,0,0,0,255.96973599126827,246.3333285794739L255.9575884998742,284.9999933380171A135,135,0,0,1,134.9120097954186,90.31165416754118Z" stroke-width="3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="256" y="140" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" font-size="15px" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: 800; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;" font-weight="800" transform="matrix(1,0,0,1,0,0)"><tspan dy="140" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">In-Store Sales</tspan></text><text x="256" y="160" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" font-size="14px" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: Arial;" transform="matrix(1,0,0,1,0,0)"><tspan dy="160" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">30</tspan></text></svg></div>
+                                </div>
+                            </div><!-- /.nav-tabs-custom -->
+
+                            <!-- solid sales graph -->
+                            <div class="box box-solid bg-teal-gradient">
+                                <div class="box-header ui-sortable-handle" style="cursor: move;">
+                                    <i class="fa fa-th"></i>
+                                    <h3 class="box-title">Sales Graph</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn bg-teal btn -sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <div class="box-body border-radius-none">
+                                    <div class="chart" id="line-chart" style="height: 250px;"><svg height="250" version="1.1" width="1650" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><text x="40" y="213" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">0</tspan></text><path fill="none" stroke="#efefef" d="M52.5,213H1625" stroke-width="0.4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="40" y="166" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">5,000</tspan></text><path fill="none" stroke="#efefef" d="M52.5,166H1625" stroke-width="0.4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="40" y="119" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">10,000</tspan></text><path fill="none" stroke="#efefef" d="M52.5,119H1625" stroke-width="0.4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="40" y="72" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">15,000</tspan></text><path fill="none" stroke="#efefef" d="M52.5,72H1625" stroke-width="0.4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="40" y="25" text-anchor="end" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">20,000</tspan></text><path fill="none" stroke="#efefef" d="M52.5,25H1625" stroke-width="0.4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><text x="1625" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-06</tspan></text><text x="1565.765530859197" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-05</tspan></text><text x="1449.2869981266772" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-03</tspan></text><text x="1336.550427826439" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2013-01</tspan></text><text x="1277.3159586856361" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-12</tspan></text><text x="1219.9126626499924" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-11</tspan></text><text x="1160.6781935091894" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-10</tspan></text><text x="1044.120044554706" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-08</tspan></text><text x="984.8855754139031" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-07</tspan></text><text x="868.3274264594197" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-05</tspan></text><text x="751.8488937268999" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-03</tspan></text><text x="637.2015340995392" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2012-01</tspan></text><text x="577.9670649587363" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-12</tspan></text><text x="520.5637689230925" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-11</tspan></text><text x="461.32929978228947" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-10</tspan></text><text x="344.7711508278062" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-08</tspan></text><text x="285.5366816870032" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-07</tspan></text><text x="168.97853273251985" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-05</tspan></text><text x="52.5" y="225.5" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#ffffff" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: &#39;Open Sans&#39;;" font-size="10px" font-family="Open Sans" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.46875" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">2011-03</tspan></text><path fill="none" stroke="#efefef" d="M52.5,187.93959999999998C96.42825046833072,187.6764,184.28475140499216,189.52525225368063,228.21300187332287,186.8868C272.16115639714445,184.24715225368064,360.05746544478757,167.99535916230366,404.00561996860915,166.8272C447.49598121614093,165.67120916230365,534.4767037112044,179.82086044861524,577.9670649587363,177.59019999999998C621.4375221507771,175.36056044861522,708.378436534859,151.2103127305853,751.8488937268999,148.986C795.7771441952306,146.7382627305853,883.6336451318921,157.36427961494903,927.5618956002228,159.702C971.5100501240444,162.04077961494903,1059.4063591716874,178.79837068062827,1103.354513695509,167.692C1146.8448749430408,156.70132068062827,1233.8255974381043,78.2471897008055,1277.3159586856361,71.31379999999999C1320.3087185458965,64.4597397008055,1406.2942382664169,104.82300696130065,1449.2869981266772,112.5422C1493.2152485950078,120.42935696130066,1581.0717495316694,128.43994999999998,1625,133.73919999999998" stroke-width="2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path><circle cx="52.5" cy="187.93959999999998" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="228.21300187332287" cy="186.8868" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="404.00561996860915" cy="166.8272" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="577.9670649587363" cy="177.59019999999998" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="751.8488937268999" cy="148.986" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="927.5618956002228" cy="159.702" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1103.354513695509" cy="167.692" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1277.3159586856361" cy="71.31379999999999" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1449.2869981266772" cy="112.5422" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle><circle cx="1625" cy="133.73919999999998" r="4" fill="#efefef" stroke="#efefef" stroke-width="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></circle></svg><div class="morris-hover morris-default-style" style="display: none;"></div></div>
+                                </div><!-- /.box-body -->
+                                <div class="box-footer no-border">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                            <div style="display: inline; width: 60px; height: 60px;"><canvas width="60" height="60"></canvas><input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none; background: none;"></div>
+                                            <div class="knob-label">Mail-Orders</div>
+                                        </div><!-- ./col -->
+                                        <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                                            <div style="display: inline; width: 60px; height: 60px;"><canvas width="60" height="60"></canvas><input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none; background: none;"></div>
+                                            <div class="knob-label">Online</div>
+                                        </div><!-- ./col -->
+                                        <div class="col-xs-4 text-center">
+                                            <div style="display: inline; width: 60px; height: 60px;"><canvas width="60" height="60"></canvas><input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; -webkit-appearance: none; background: none;"></div>
+                                            <div class="knob-label">In-Store</div>
+                                        </div><!-- ./col -->
+                                    </div><!-- /.row -->
+                                </div><!-- /.box-footer -->
+                            </div><!-- /.box -->
+
+                            <div class="box box-solid bg-teal-gradient">
+                                <div class="box-header ui-sortable-handle" style="cursor: move;">
+                                    <i class="fa fa-th"></i>
+                                    <h3 class="box-title">Sales Graph</h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                        <button class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
+                                    </div>
+                                    <div class="box-body border-radius-none">
+                                        <div class="chart" id="chart1" style="height: 400px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section><!-- /.Left col -->
+                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                        <!--<section class="col-lg-6 connectedSortable">-->
+
+                            <!--&lt;!&ndash; Map box &ndash;&gt;-->
+                            <!--<div class="box box-solid bg-light-blue-gradient">-->
+                                <!--<div class="box-header">-->
+                                    <!--&lt;!&ndash; tools box &ndash;&gt;-->
+                                    <!--<div class="pull-right box-tools">-->
+                                        <!--<button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>-->
+                                        <!--<button class="btn btn-primary btn-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>-->
+                                    <!--</div>&lt;!&ndash; /. tools &ndash;&gt;-->
+
+                                    <!--<i class="fa fa-map-marker"></i>-->
+                                    <!--<h3 class="box-title">-->
+                                        <!--Visitors-->
+                                    <!--</h3>-->
+                                <!--</div>-->
+                                <!--<div class="box-body">-->
+                                    <!--<div id="world-map" style="height: 250px;"></div>-->
+                                <!--</div>&lt;!&ndash; /.box-body&ndash;&gt;-->
+                                <!--<div class="box-footer no-border">-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">-->
+                                            <!--<div id="sparkline-1"></div>-->
+                                            <!--<div class="knob-label">Visitors</div>-->
+                                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                                        <!--<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">-->
+                                           <!--<div id="sparkline-2"></div>-->
+                                            <!--<div class="knob-label">Online</div>-->
+                                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                                        <!--<div class="col-xs-4 text-center">-->
+                                            <!--<div id="sparkline-3"></div>-->
+                                            <!--<div class="knob-label">Exists</div>-->
+                                        <!--</div>&lt;!&ndash; ./col &ndash;&gt;-->
+                                    <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; /.box &ndash;&gt;-->
+
+                            <!--&lt;!&ndash; Calendar &ndash;&gt;-->
+                            <!--<div class="box box-solid bg-green-gradient">-->
+                                <!--<div class="box-header">-->
+                                    <!--<i class="fa fa-calendar"></i>-->
+                                    <!--<h3 class="box-title">Calendar</h3>-->
+                                    <!--&lt;!&ndash; tools box &ndash;&gt;-->
+                                    <!--<div class="pull-right box-tools">-->
+                                        <!--&lt;!&ndash; button with a dropdown &ndash;&gt;-->
+                                        <!--<div class="btn-group">-->
+                                            <!--<button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>-->
+                                            <!--<ul class="dropdown-menu pull-right" role="menu">-->
+                                                <!--<li><a href="#">Add new event</a></li>-->
+                                                <!--<li><a href="#">Clear events</a></li>-->
+                                                <!--<li class="divider"></li>-->
+                                                <!--<li><a href="#">View calendar</a></li>-->
+                                            <!--</ul>-->
+                                        <!--</div>-->
+                                        <!--<button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
+                                        <!--<button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>                                        -->
+                                    <!--</div>&lt;!&ndash; /. tools &ndash;&gt;-->
+                                <!--</div>&lt;!&ndash; /.box-header &ndash;&gt;-->
+                                <!--<div class="box-body no-padding">-->
+                                    <!--&lt;!&ndash;The calendar &ndash;&gt;-->
+                                    <!--<div id="calendar" style="width: 100%"></div>-->
+                                <!--</div>&lt;!&ndash; /.box-body &ndash;&gt;  -->
+                                <!--<div class="box-footer text-black">-->
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-sm-6">-->
+                                            <!--&lt;!&ndash; Progress bars &ndash;&gt;-->
+                                            <!--<div class="clearfix">-->
+                                                <!--<span class="pull-left">Task #1</span>-->
+                                                <!--<small class="pull-right">90%</small>-->
+                                            <!--</div>-->
+                                            <!--<div class="progress xs">-->
+                                                <!--<div class="progress-bar progress-bar-green" style="width: 90%;"></div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="clearfix">-->
+                                                <!--<span class="pull-left">Task #2</span>-->
+                                                <!--<small class="pull-right">70%</small>-->
+                                            <!--</div>-->
+                                            <!--<div class="progress xs">-->
+                                                <!--<div class="progress-bar progress-bar-green" style="width: 70%;"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>&lt;!&ndash; /.col &ndash;&gt;-->
+                                        <!--<div class="col-sm-6">-->
+                                            <!--<div class="clearfix">-->
+                                                <!--<span class="pull-left">Task #3</span>-->
+                                                <!--<small class="pull-right">60%</small>-->
+                                            <!--</div>-->
+                                            <!--<div class="progress xs">-->
+                                                <!--<div class="progress-bar progress-bar-green" style="width: 60%;"></div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="clearfix">-->
+                                                <!--<span class="pull-left">Task #4</span>-->
+                                                <!--<small class="pull-right">40%</small>-->
+                                            <!--</div>-->
+                                            <!--<div class="progress xs">-->
+                                                <!--<div class="progress-bar progress-bar-green" style="width: 40%;"></div>-->
+                                            <!--</div>-->
+                                        <!--</div>&lt;!&ndash; /.col &ndash;&gt;-->
+                                    <!--</div>&lt;!&ndash; /.row &ndash;&gt;                                                                        -->
+                                <!--</div>-->
+                            <!--</div>&lt;!&ndash; /.box &ndash;&gt;                            -->
+
+                        <!--</section>&lt;!&ndash; right col &ndash;&gt;-->
+                    </div><!-- /.row (main row) -->
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+
+
+        <script src="./Stock   Dashboard_files/jquery.min.js"></script>
+        <script src="./Stock   Dashboard_files/bootstrap.min.js" type="text/javascript"></script>
+        <script src="./Stock   Dashboard_files/jquery-ui.min.js" type="text/javascript"></script>
+        <!-- Morris.js charts -->
+        <script src="./Stock   Dashboard_files/raphael-min.js"></script>
+        <script src="./Stock   Dashboard_files/morris.min.js" type="text/javascript"></script>
+        <!-- Sparkline -->
+        <script src="./Stock   Dashboard_files/jquery.sparkline.min.js" type="text/javascript"></script>
+        <!-- jvectormap -->
+        <script src="./Stock   Dashboard_files/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+        <script src="./Stock   Dashboard_files/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="./Stock   Dashboard_files/jquery.knob.js" type="text/javascript"></script>
+        <!-- daterangepicker -->
+        <script src="./Stock   Dashboard_files/daterangepicker.js" type="text/javascript"></script>
+        <!-- datepicker -->
+        <script src="./Stock   Dashboard_files/bootstrap-datepicker.js" type="text/javascript"></script>
+        <!-- Bootstrap WYSIHTML5 -->
+        <script src="./Stock   Dashboard_files/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+        <!-- iCheck -->
+        <script src="./Stock   Dashboard_files/icheck.min.js" type="text/javascript"></script>
+
+        <!-- AdminLTE App -->
+        <script src="./Stock   Dashboard_files/app.js" type="text/javascript"></script>
+
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="./Stock   Dashboard_files/dashboard.js" type="text/javascript"></script>
+
+        <!-- AdminLTE for demo purposes -->
+        <script src="./Stock   Dashboard_files/demo.js" type="text/javascript"></script>
+
+    
+
+<div class="jvectormap-label"></div><div class="no-print" style="position: fixed; top: 150px; right: 0px; border-radius: 5px 0px 0px 5px; padding: 10px 15px; font-size: 16px; z-index: 999999; cursor: pointer; color: rgb(221, 221, 221); background: rgba(0, 0, 0, 0.701961);"><i class="fa fa-gear"></i></div><div class="no-print" style="padding: 10px; position: fixed; top: 130px; right: -200px; border: 3px solid rgba(0, 0, 0, 0.701961); width: 200px; z-index: 999999; background: rgb(255, 255, 255);"><h4 style="margin: 0 0 5px 0; border-bottom: 1px dashed #ddd; padding-bottom: 3px;">Layout Options</h4><div class="form-group no-margin"><div class=".checkbox"><label><input type="checkbox" onchange="change_layout();"> Fixed layout</label></div></div><h4 style="margin: 0 0 5px 0; border-bottom: 1px dashed #ddd; padding-bottom: 3px;">Skins</h4><div class="form-group no-margin"><div class=".radio"><label><input name="skins" type="radio" onchange="change_skin(&quot;skin-black&quot;);"> Black</label></div></div><div class="form-group no-margin"><div class=".radio"><label><input name="skins" type="radio" onchange="change_skin(&quot;skin-blue&quot;);" checked="checked"> Blue</label></div></div></div></body></html>
