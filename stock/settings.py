@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 import urlparse
 urlparse.uses_netloc.append('mysql')
-MYSQL_URL = urlparse.urlparse(os.environ['DATABASE_URL'])
+DATABASE_URL = urlparse.urlparse(os.environ['DATABASE_URL'])
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -63,11 +63,11 @@ WSGI_APPLICATION = 'stock.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': MYSQL_URL.path[1:],
-        'USER': MYSQL_URL.username,
-        'PASSWORD': MYSQL_URL.password,
-        'HOST': MYSQL_URL.hostname,
-        'PORT': MYSQL_URL.port,
+        'NAME': DATABASE_URL.path[1:],
+        'USER': DATABASE_URL.username,
+        'PASSWORD':DATABASE_URL.password,
+        'HOST': DATABASE_URL.hostname,
+        'PORT': DATABASE_URL.port,
     }
 }
 
