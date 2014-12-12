@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from dashboard.views import DashboardView, StockChartView
+from dashboard.views import DashboardView, StockChartView, TestView, SingleStockView
 
 urlpatterns = patterns('',
     # Examples:
@@ -10,7 +10,9 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'stock/', DashboardView.as_view()),
-    url(r'^stock_chart/', StockChartView.as_view()),
+    url(r'^stock_chart/$', StockChartView.as_view()),
+    url(r'^stock_api/$', SingleStockView.as_view()),
+    url(r'test/', TestView.as_view()),
 )
 
 urlpatterns += staticfiles_urlpatterns()

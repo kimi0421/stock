@@ -18,7 +18,6 @@ $.ajax({
                 .tickFormat(function(d){
                     return d3.time.format('%Y-%m-%d')(new Date(d));
                 });
-            console.log(response);
 
             chart.yAxis
                 .axisLabel('Price')

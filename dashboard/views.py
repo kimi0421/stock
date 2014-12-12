@@ -105,5 +105,50 @@ class StockChartView(View):
             return HttpResponse(json.dumps(response), content_type="application/json")
 
 
+class SingleStockView(View):
+
+    @staticmethod
+    def get_full_stock_data(symbol, start_date, end_date):
+        """
+        This method is used to get daily stock price
+        :param symbol: stock symbol
+        :return: dict format
+        """
+        stock_url = 'http://ichart.finance.yahoo.com/table.csv?s={symbol}&a={start_month}&b={start_day}&c={start_year}' \
+                    '&d={end_month}&e={end_day}&f={end_year}&g=d&ignore=.csv'
+        formatted_url = stock_url.format(symbol=symbol,
+                                         end_month=end_date.month - 1, end_day=end_date.day, end_year=end_date.year,
+                                         start_month=start_date.month - 1, start_day=start_date.day, start_year=start_date.year)
+        stock_df = pd.read_csv(urllib2.urlopen(formatted_url), index_col=['Date'], parse_dates=True)
+        stock_df = stock_df.sort_index()
+        stock_data = [{'date': idx.value // 10 ** 6, 'open': stock_df.ix[idx]['Open'],
+                       'high': stock_df.ix[idx]['High'], 'low': stock_df.ix[idx]['Low'],
+                       'close': stock_df.ix[idx]['Close'], 'volume': stock_df.ix[idx]['Volume'],
+                       'value': stock_df.ix[idx]['Adj Close']} for idx in stock_df.index]
+        return stock_data
+
+    def get(self, request, **kwargs):
+        """
+        individual stock api
+        :param request:
+        :param kwargs:
+        :return:
+        """
+        if request.method == 'GET':
+            symbol = request.GET.get('symbol')
+
+            # Set up end_date and start_date
+            end_date = pd.to_datetime(datetime.date.today())
+            start_date = end_date - datetime.timedelta(365)
+
+            stock_data = self.get_full_stock_data(symbol, start_date, end_date)
+
+            return HttpResponse(json.dumps(stock_data), content_type="application/json")
+
+
+class TestView(TemplateView):
+    template_name = 'test.html'
+
+
 
 
