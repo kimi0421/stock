@@ -1611,7 +1611,7 @@ body.progress.animated .ui.progress .bar {
 }
 @media only screen and (min-width : 1355px) {
   #home .container {
-    width: 80%;
+    width: 90%;
   }
   #home.item .container,
   #home.card .container {
@@ -1805,9 +1805,33 @@ body.progress.animated .ui.progress .bar {
 
 
 #stock_container{
-  top: 80px;
+  top: 40px;
 }
 
 #stock_title {
     margin-left: 20%;
+}
+
+#stock_container .ui.reveal > .content {
+    font-size: 2rem !important;
+    text-align: center;
+}
+
+#stock_container .ui.reveal > .visible.content{
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+#stock_container .ui.reveal > .hidden.content{
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+#stock_container .ui.segment{
+    border-top-width: 4px;
+}
+
+#card_for_chart {
+    margin-top: 20px;
+    width: 100%;
 }

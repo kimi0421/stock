@@ -149,6 +149,49 @@ class SingleStockView(View):
 class TestView(TemplateView):
     template_name = 'test.html'
 
+    @staticmethod
+    def get_changes(stock_symobls):
+        url = 'http://finance.yahoo.com/d/quotes.csv?s={symbols}&f=snw1kjdrj1v'
+        symbols_str = '+'.join(stock_symobls)
+        response = urllib2.urlopen(url.format(symbols=symbols_str))
+        df = pd.read_csv(response, names=['symbol', 'name', 'change', 'low', 'high', 'dividend',
+                                          'pe', 'market_cap', 'volume'])
+        # Return the list of changes
+        try:
+            changes = [change.split(' ')[-1] for change in df['change']]
+            df['change'] = changes
+            return df
 
+        except Exception as e:
+            logger.debug("Something wrong with Yahoo API for getting the change")
+            logger.error(e)
+
+    def get_context_data(self, **kwargs):
+
+        recommended_stocks = RecommendStocks.objects.filter(sector='Technology')
+        recommended_stock_symbols = [stock.symbol for stock in recommended_stocks]
+        recommended_stock_names = [stock.name for stock in recommended_stocks]
+
+        recommended_stock_df = self.get_changes(recommended_stock_symbols)
+        # Create context return to html
+        context = {'stocks': {}}
+        for idx, stock in enumerate(recommended_stock_symbols):
+
+            # Check whether it is positive or negative
+            if recommended_stock_df.loc[idx, 'change'] == '+':
+                box_color = 'green'
+            else:
+                box_color = 'red'
+
+            context['stocks'][stock] = {'change': recommended_stock_df.loc[idx, 'change'][:-1],
+                                        'name': recommended_stock_names[idx],
+                                        'low': recommended_stock_df.loc[idx, 'low'],
+                                        'high': recommended_stock_df.loc[idx, 'high'],
+                                        'dividend': recommended_stock_df.loc[idx, 'dividend'],
+                                        'pe': recommended_stock_df.loc[idx, 'pe'],
+                                        'market_cap': recommended_stock_df.loc[idx, 'market_cap'],
+                                        'volume': recommended_stock_df.loc[idx, 'volume'],
+                                        'box_color': box_color}
+        return context
 
 

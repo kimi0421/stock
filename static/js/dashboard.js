@@ -12,5 +12,16 @@ $(document)
         $('.ui.modal')
             .modal('attach events', '#card_modal_trigger', 'show');
 
+        $('.ui.ribbon.label')
+            .popup({
+                hoverable: true,
+                position: 'bottom right',
+                delay: {
+                    show: 100,
+                    hide: 100
+                }
+            })
+        ;
+
     })
 ;
