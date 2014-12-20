@@ -1465,7 +1465,7 @@ body.progress.animated .ui.progress .bar {
 
 #home .main.container {
   background-color: #FFFFFF;
-  margin: 0em auto;
+  margin: 0em 10em;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
   border-left: 1px solid #DDDDDD;
   border-right: 1px solid #DDDDDD;
@@ -1611,7 +1611,7 @@ body.progress.animated .ui.progress .bar {
 }
 @media only screen and (min-width : 1355px) {
   #home .container {
-    width: 90%;
+    width: 85%;
   }
   #home.item .container,
   #home.card .container {

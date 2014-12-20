@@ -178,7 +178,7 @@ class TestView(TemplateView):
         for idx, stock in enumerate(recommended_stock_symbols):
 
             # Check whether it is positive or negative
-            if recommended_stock_df.loc[idx, 'change'] == '+':
+            if recommended_stock_df.loc[idx, 'change'][0] == '+':
                 box_color = 'green'
             else:
                 box_color = 'red'
