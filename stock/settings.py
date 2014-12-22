@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashboard',
+    'forecast_server',
 )
 
 MIDDLEWARE_CLASSES = (

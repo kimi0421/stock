@@ -28,18 +28,21 @@ class DataCrawler:
         self.logger.addHandler(hdlr)
         self.logger.setLevel(logging.INFO)
 
-    def get_daily_data(self, days=10000):
+    def get_daily_data(self, days=10000, stock_symbols=None, output_dir='output/stock_raw_data/'):
         # Get stock list from database first
-        sql = 'SELECT Symbol FROM stock.stock_symbols where LastSale > %s and MarketCap > %s' % (LEAST_PRICE, LEAST_CAP)
-        cur = self.conn.cursor()
-        cur.execute(sql)
+        if stock_symbols is None:
+            sql = 'SELECT Symbol FROM stock.stock_symbols where LastSale > %s and MarketCap > %s' \
+                  % (LEAST_PRICE, LEAST_CAP)
+            cur = self.conn.cursor()
+            cur.execute(sql)
 
-        self.logger.info("Getting stock list from database")
-        stock_symbols = cur.fetchall()
-        self.logger.info("Successfully obtained the stock list")
+            self.logger.info("Getting stock list from database")
+            stock_symbols = cur.fetchall()
+            self.logger.info("Successfully obtained the stock list")
 
         #Try to get daily data from yahoo hidden api
         # Hidden API url
+        import ipdb; ipdb.set_trace()
         url = 'http://ichart.finance.yahoo.com/table.csv?s={symbol}&a={start_month}&b={start_day}&c={start_year}' \
               '&d={end_month}&e={end_day}&f={end_year}&g=d&ignore=.csv'
         end_date = datetime.datetime.utcnow().date()
@@ -49,8 +52,8 @@ class DataCrawler:
             symbol = symbol.replace('-', '')
             output_file_name = symbol + '.csv'
 
-            if output_file_name in os.listdir('output/stock_raw_data/'):
-                file_modify_date = pd.to_datetime(os.stat('output/stock_raw_data/' + output_file_name)[-1] * 10 ** 9).date()
+            if output_file_name in os.listdir(output_dir):
+                file_modify_date = pd.to_datetime(os.stat(output_dir + output_file_name)[-1] * 10 ** 9).date()
             else:
                 file_modify_date = None
 
@@ -60,11 +63,16 @@ class DataCrawler:
                 tmp_url = url.format(symbol=symbol,
                                      start_month=start_date.month, start_day=start_date.day, start_year=start_date.year,
                                      end_month=end_date.month, end_day=end_date.day, end_year=end_date.year)
-                response = urllib2.urlopen(tmp_url)
-                df = pd.read_csv(response, index_col='Date', parse_dates=True)
-                df = df.sort_index()
-                self.logger.info("Successfully get the data for " + symbol)
-                df.to_csv('data_crawler/stock_raw_data/' + output_file_name)
+                try:
+                    response = urllib2.urlopen(tmp_url)
+                    df = pd.read_csv(response, index_col='Date', parse_dates=True)
+                    df = df.sort_index()
+                    self.logger.info("Successfully get the data for " + symbol)
+                    df.to_csv(output_dir + output_file_name)
+                except Exception as e:
+                    self.logger.warning(symbol + ' ' + str(e))
+
+        self.logger.info("Successfully finish getting data")
 
 
 
