@@ -19,3 +19,13 @@ class StockToForecast(models.Model):
 
     class Meta:
         db_table = 'stock_to_forecast'
+
+
+class Forecast(models.Model):
+    id = models.IntegerField(primary_key=True)  # AutoField?
+    symbol = models.CharField(max_length=11)
+    revenue = models.FloatField(max_length=11)
+    error = models.FloatField(max_length=11)
+
+    class Meta:
+        db_table = 'forecast'

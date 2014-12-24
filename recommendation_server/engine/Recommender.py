@@ -39,9 +39,9 @@ class Recommender:
 
 if __name__ == '__main__':
 
-    df = pd.DataFrame({'e':[0.2, 0.1, 0.3], 'sigma':[0.2, 0.05, 0.25]}, index=[0, 1, 2])
+    df = pd.DataFrame({'e':[0.2, 0.3, 0.4], 'sigma':[0.15, 0.2, 0.3]}, index=[0, 1, 2])
     rec = Recommender(df)
-    sol = rec.optimize(0.15)
+    sol = rec.optimize(0.35)
     import ipdb; ipdb.set_trace()
 
 

@@ -20,14 +20,23 @@ class Forecaster:
 
 
     def __calculate_insample_error__(self, predicted, actual):
-        predicted_change = (predicted[1:] - predicted[:-1]) / predicted[:-1]
-        actual_change = (actual[1:] - actual[:-1]) / actual[:-1]
-        error_mean = np.mean(predicted_change - actual_change)
-        error_std = np.std(predicted_change - actual_change)
+        # predicted_change = (predicted[1:] - actual[:-1]) / predicted[:-1]
+        # actual_change = (actual[1:] - actual[:-1]) / actual[:-1]
+        error_mean = np.mean(np.array(predicted) - np.array(actual))
+        error_std = np.std(np.array(predicted) - np.array(actual))
         return error_mean, error_std
 
-    def __clean_ft_mx__(self, ft_mx):
+    def __scale_ft_mx__(self, ft_mx, column_max=None):
+        if column_max is None:
+            column_max = {}
+            for column in ft_mx.columns:
+                if column != 'price':
+                    column_max[column] = ft_mx[column].max()
+        for column, max_val in column_max.iteritems():
+            ft_mx[column] = ft_mx[column] / max_val
+        return ft_mx, column_max
 
+    def __clean_ft_mx__(self, ft_mx):
         ft_mx = ft_mx.dropna()
         return ft_mx
 
@@ -44,9 +53,8 @@ class Forecaster:
         # Features
         # Get total length of input data
         n = len(input_data)
-
         # Construct initial structure
-        ft_mx = pd.DataFrame({'price': input_data['Adj Close'].tolist()}, index=range(n))
+        ft_mx = pd.DataFrame({'price': input_data['Adj Return'].tolist()}, index=range(n))
         ft_mx = ft_mx.append(pd.DataFrame({'price': [np.nan] * 30}, index=range(n + 1, n + 31)))
 
         # Average five days' volume
@@ -59,12 +67,29 @@ class Forecaster:
         ft_mx.loc[30:30 + n, 'volume_avg_30'] = volumes_avg_30
 
         # Average five days' price
-        price_list = np.array(input_data['Adj Close'])
+        price_list = np.array(input_data['Adj Return'])
         if forward_step <= 5:
             price_avg_5 = [np.mean(price_list[i:i + 5]) for i in xrange(n)]
             ft_mx.loc[5:5 + n, 'price_avg_5'] = price_avg_5
+        # Average 30 days' price
         price_avg_30 = [np.mean(price_list[i:i + 30]) for i in xrange(n)]
         ft_mx.loc[30:30 + n, 'price_avg_30'] = price_avg_30
+
+        # Average 5 days' price for neg
+        price_list = np.array(neg_corr_data['Adj Return'])
+        if forward_step <= 5:
+            price_avg_neg_5 = [np.mean(price_list[i:i + 5]) for i in xrange(n)]
+            ft_mx.loc[5:5 + n, 'price_avg_neg_5'] = price_avg_neg_5
+        price_avg_neg_30 = [np.mean(price_list[i:i + 30]) for i in xrange(n)]
+        ft_mx.loc[30:30 + n, 'price_avg_neg_30'] = price_avg_neg_30
+
+        # Average 5 days' price for neg
+        price_list = np.array(po_corr_data['Adj Return'])
+        if forward_step <= 5:
+            price_avg_po_5 = [np.mean(price_list[i:i + 5]) for i in xrange(n)]
+            ft_mx.loc[5:5 + n, 'price_avg_neg_5'] = price_avg_po_5
+        price_avg_po_30 = [np.mean(price_list[i:i + 30]) for i in xrange(n)]
+        ft_mx.loc[30:30 + n, 'price_avg_neg_30'] = price_avg_po_30
 
         # Index Features
         if forward_step <= 5:
@@ -92,10 +117,10 @@ class Forecaster:
             return ft_mx[n : n + forward_step]
 
     def train(self):
-        import ipdb; ipdb.set_trace()
         train_result = {}
         ft_mx = self.__create_feature_mx__(self.input_data, self.po_corr_data, self.neg_corr_data)
         ft_mx = self.__clean_ft_mx__(ft_mx)
+        ft_mx, column_max = self.__scale_ft_mx__(ft_mx)
         x = ft_mx.drop('price', 1)
         y = ft_mx['price']
         trained_model = self.model.fit(x, y)
@@ -103,6 +128,7 @@ class Forecaster:
         error_mean, error_std = self.__calculate_insample_error__(np.array(predicted), np.array(y.tolist()))
         train_result['trained_model'] = trained_model
         train_result['error'] = (error_mean, error_std)
+        train_result['column_max'] = column_max
         train_result['last_price'] = ft_mx['price'].tolist()[-1]
         return train_result
 
@@ -114,17 +140,19 @@ class Forecaster:
         #Delete price data
         del forecast_ft_mx['price']
         forecast_ft_mx = self.__clean_ft_mx__(forecast_ft_mx)
+        forecast_ft_mx, _ = self.__scale_ft_mx__(forecast_ft_mx, train_result['column_max'])
         forecast_price = trained_model.predict(forecast_ft_mx)
         forecast_result = {}
         forecast_result['price'] = forecast_price
-        forecast_result['return'] = (forecast_price[-1] - train_result['last_price']) / train_result['last_price']
+        #forecast_result['return'] = (forecast_price[-1] - train_result['last_price']) / train_result['last_price']
+        forecast_result['return'] = forecast_price[-1]
         forecast_result['error'] = train_result['error']
         return forecast_result
 
 if __name__ == '__main__':
     from forecast_server.engine.ForecastModels import SVRModel
     ml_model = SVRModel()
-    df = pd.read_csv('output/stock_raw_data/AA.csv')[-730:]
+    df = pd.read_csv('output/stock_raw_data/BTG.csv')[-730:]
     df_po = pd.read_csv('output/stock_raw_data/AAN.csv')[-730:]
     df_neg = pd.read_csv('output/stock_raw_data/AAP.csv')[-730:]
     fcster = Forecaster(df, df_po, df_neg, ml_model)

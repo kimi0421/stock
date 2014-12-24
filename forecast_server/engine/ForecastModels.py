@@ -7,7 +7,7 @@ class SVRModel:
             self.C = parameters['C']
             self.epsilon = parameters['epsilon']
         else:
-            self.C = 0.01
+            self.C = 5
             self.epsilon = 0.5
         self.clf = SVR(C=self.C, epsilon=self.epsilon)
 

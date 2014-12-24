@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from dashboard.views import DashboardView, StockChartView, TestView, SingleStockView
 from forecast_server.views import ForecastGenerateView
+from recommendation_server.views import RecommendationView
 
 urlpatterns = patterns('',
     # Examples:
@@ -15,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^stock_api/$', SingleStockView.as_view()),
     url(r'test/', TestView.as_view()),
     url(r'forecast_generate/', ForecastGenerateView.as_view()),
-
+    url(r'recommendation/', RecommendationView.as_view()),
 )
 
 urlpatterns += staticfiles_urlpatterns()
