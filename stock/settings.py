@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'dashboard',
     'forecast_server',
+    'data_crawler',
 )
 
 MIDDLEWARE_CLASSES = (

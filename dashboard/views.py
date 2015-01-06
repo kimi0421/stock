@@ -191,7 +191,7 @@ class TestView(TemplateView):
                                         'pe': recommended_stock_df.loc[idx, 'pe'],
                                         'market_cap': recommended_stock_df.loc[idx, 'market_cap'],
                                         'volume': recommended_stock_df.loc[idx, 'volume'],
-                                        'box_color': box_color}
+                                        'box_color': box_color, 'index': idx}
         return context
 
 

@@ -25,6 +25,7 @@ class InputUtil:
         return stock_symbols_df[~pd.isnull(stock_symbols_df['Symbol'])]
 
     def update_stock_list_database(self):
+        import ipdb; ipdb.set_trace()
         stock_df = self.get_stock_symbols_list()
 
         #Change the column name

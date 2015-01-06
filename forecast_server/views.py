@@ -26,16 +26,17 @@ class ForecastGenerateView(View):
         return df[-n:]
 
     def get(self, *arg, **kwargs):
+        import ipdb; ipdb.set_trace()
         ml_model = SVRModel()
         stocks_to_forecast = StockToForecast.objects.all()
         id = 0
         for stock in stocks_to_forecast:
-            try:
-                symbol = stock.symbol
-                symbol_pos = stock.pos
-                symbol_neg = stock.neg
+            symbol = stock.symbol
+            symbol_pos = stock.pos
+            symbol_neg = stock.neg
 
-                self.logger.info("Processing stock %s." % (symbol))
+            try:
+                self.logger.info("Processing stock %s." % symbol)
                 stock_df = self.get_data(symbol, 365 * 2)
                 stock_df_pos = self.get_data(symbol_pos, 365 * 2)
                 stock_df_neg = self.get_data(symbol_neg, 365 * 2)
@@ -45,7 +46,7 @@ class ForecastGenerateView(View):
                                           error=np.sum(fcst_result['error']))
                 forecast_entry.save()
                 id += 1
-                self.logger.info("Successfully processing stock %s." % (symbol))
+                self.logger.info("Successfully processing stock %s." % symbol)
             except Exception as e:
                 self.logger.warning(str(e) + ' ' + symbol)
         return HttpResponse('Success!')

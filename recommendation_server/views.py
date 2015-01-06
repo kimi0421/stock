@@ -8,6 +8,7 @@ from dashboard.models import RecommendStocks
 from forecast_server.models import Forecast
 
 import logging
+import json
 import pandas as pd
 
 
@@ -28,8 +29,32 @@ class RecommendationView(View):
         e = [stock.revenue for stock in all_forecasted_stock]
         sigma = [stock.error for stock in all_forecasted_stock]
         df = pd.DataFrame({'e': e, 'sigma': sigma}, index=symbol_index)
-        rec = Recommender(df)
-        import ipdb; ipdb.set_trace()
-        sol = rec.optimize(0.15)
-        return HttpResponse('success')
+        # Test
+        df['e'] -= 0.8 * df['sigma']
+
+        # First Time
+        rec = Recommender(df, 760)
+        sol = rec.optimize(0.03)
+        sol_df = pd.DataFrame({'weight': list(sol['x'])}, index=df.index)
+        sol_df = sol_df.sort('weight')[-200:]
+
+        # Second Time
+        df = df.ix[sol_df.index]
+        rec = Recommender(df, 760)
+        sol = rec.optimize(0.03)
+        sol_df = pd.DataFrame({'weight': list(sol['x'])}, index=df.index)
+        sol_df = sol_df.sort('weight')[-60:]
+
+        # Third Time
+        df = df.ix[sol_df.index]
+        rec = Recommender(df, 760)
+        sol = rec.optimize(0.03)
+        sol_df = pd.DataFrame({'weight': list(sol['x'])}, index=df.index)
+        sol_df = sol_df.sort('weight')[-6:]
+
+        df = df.ix[sol_df.index]
+        rec = Recommender(df, 760)
+        sol = rec.optimize(0.03)
+        sol_df = pd.DataFrame({'weight': list(sol['x'])}, index=df.index)
+        return HttpResponse(json.dumps(sol_df.index.tolist()))
 

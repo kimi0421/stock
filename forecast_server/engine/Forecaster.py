@@ -2,8 +2,8 @@ import logging
 import pandas as pd
 import numpy as np
 
-class Forecaster:
 
+class Forecaster:
     def __init__(self, input_data, po_corr_data, neg_corr_data, model):
         # Setup logger
         self.logger = logging.getLogger('Forecaster')
@@ -24,7 +24,8 @@ class Forecaster:
         # actual_change = (actual[1:] - actual[:-1]) / actual[:-1]
         error_mean = np.mean(np.array(predicted) - np.array(actual))
         error_std = np.std(np.array(predicted) - np.array(actual))
-        return error_mean, error_std
+        error_err = np.std(np.array(predicted))
+        return error_mean, error_std, error_err
 
     def __scale_ft_mx__(self, ft_mx, column_max=None):
         if column_max is None:
@@ -45,7 +46,7 @@ class Forecaster:
         df = pd.read_csv(output_dir + symbol + '.csv', index_col=[0])
         df = df.ix[date_index]
         price_list = np.array(df['Adj Close'])
-        price_avg = [np.mean(price_list[i : i + moving_days]) for i in range(total_number)]
+        price_avg = [np.mean(price_list[i:i + moving_days]) for i in range(total_number)]
         return price_avg
 
     def __create_feature_mx__(self, input_data, po_corr_data, neg_corr_data, forward_step=0):
@@ -114,7 +115,7 @@ class Forecaster:
         if forward_step == 0:
             return ft_mx[:n]
         else:
-            return ft_mx[n : n + forward_step]
+            return ft_mx[n: n + forward_step]
 
     def train(self):
         train_result = {}
@@ -125,9 +126,9 @@ class Forecaster:
         y = ft_mx['price']
         trained_model = self.model.fit(x, y)
         predicted = trained_model.predict(x)
-        error_mean, error_std = self.__calculate_insample_error__(np.array(predicted), np.array(y.tolist()))
+        error_mean, error_std, error_err = self.__calculate_insample_error__(np.array(predicted), np.array(y.tolist()))
         train_result['trained_model'] = trained_model
-        train_result['error'] = (error_mean, error_std)
+        train_result['error'] = (error_mean, error_std, error_err)
         train_result['column_max'] = column_max
         train_result['last_price'] = ft_mx['price'].tolist()[-1]
         return train_result
@@ -137,7 +138,7 @@ class Forecaster:
         trained_model = train_result['trained_model']
         forecast_ft_mx = self.__create_feature_mx__(self.input_data, self.po_corr_data,
                                                     self.neg_corr_data, forward_step)
-        #Delete price data
+        # Delete price data
         del forecast_ft_mx['price']
         forecast_ft_mx = self.__clean_ft_mx__(forecast_ft_mx)
         forecast_ft_mx, _ = self.__scale_ft_mx__(forecast_ft_mx, train_result['column_max'])
@@ -149,8 +150,10 @@ class Forecaster:
         forecast_result['error'] = train_result['error']
         return forecast_result
 
+
 if __name__ == '__main__':
     from forecast_server.engine.ForecastModels import SVRModel
+
     ml_model = SVRModel()
     df = pd.read_csv('output/stock_raw_data/BTG.csv')[-730:]
     df_po = pd.read_csv('output/stock_raw_data/AAN.csv')[-730:]
